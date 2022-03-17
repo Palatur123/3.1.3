@@ -105,7 +105,7 @@ public class AppServiceImpl implements AppService {
         if (!bindingResult.hasErrors()) {
             String oldPassword = user.getPassword();
             try {
-                user.setPassword(user.getPassword().isEmpty() ? // todo если нет такого юзера try
+                user.setPassword(user.getPassword().isEmpty() ?
                         findUser(user.getId()).getPassword() :
                         passwordEncoder.encode(user.getPassword()));
                 userRepository.save(user);

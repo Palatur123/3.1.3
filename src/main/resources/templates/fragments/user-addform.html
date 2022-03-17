@@ -37,7 +37,7 @@
         <select multiple class="form-control" id="newRoles" name="roles">
             <option th:each="role : ${allRoles}"
                     th:selected="*{hasRole('__${role.id}__')}" th:text="${role.name}"
-                    th:value="${role.id}">
+                    th:value="${role.id}" >
         </select>
     </div>
     <div>

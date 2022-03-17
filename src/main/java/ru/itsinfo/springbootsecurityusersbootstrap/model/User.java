@@ -35,6 +35,9 @@ public final class User extends AbstractEntity<Long> implements UserDetails {
     @Positive(message = "Age should not be empty")
     private int age;
 
+    @Column(name = "Role")
+    @NotEmpty(message = "Role not be empty")
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles")
     private Set<Role> roles = new HashSet<>();
